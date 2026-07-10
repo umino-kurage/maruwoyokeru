@@ -69,7 +69,8 @@
             
             // 出現する奥行きを -60 から -110 の間でランダムにバラけさせます
             const randomZ = -60 - (Math.random() * 50);
-            mesh.position.set(0, 0.6, randomZ);
+            // 真ん中の数字を 1.1 にして、お花が地面に埋まらない高さに調整します
+            mesh.position.set(0, 1.1, randomZ);
             scene.add(mesh);
             obstacles.push(mesh);
 
