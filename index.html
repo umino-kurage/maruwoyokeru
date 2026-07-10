@@ -56,11 +56,14 @@
             function spawnObstacle() {
             if (isGameOver) return;
             // 半径を0.6から1.0に大きくして、ジャンプの高さ・飛距離とガチッと噛み合わせます
-            const geo = new THREE.SphereGeometry(1.0, 32, 32);
+// 1. 球体から平らな板（縦横2.0サイズ）に変更し、イラストが歪まないようにします
+            const geo = new THREE.PlaneGeometry(2.0, 2.0);
             
-            // 【修正！】イラストを読み込んで丸に貼り付けます
+            // 2. イラストのデータを読み込みます
             const texture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/umino-kurage/maruwoyokeru/main/F9D3A316-7798-46BB-8BC5-A44B22299324.png');
-            const mat = new THREE.MeshStandardMaterial({ map: texture, transparent: true });
+            
+            // 3. イラストが引き伸ばされず、そのまま綺麗に前を向く設定です
+            const mat = new THREE.MeshBasicMaterial({ map: texture, transparent: true, side: THREE.DoubleSide });
             const mesh = new THREE.Mesh(geo, mat);
             
             // 出現する奥行きを -60 から -110 の間でランダムにバラけさせます
