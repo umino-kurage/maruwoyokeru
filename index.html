@@ -53,12 +53,16 @@
         const obstacleSpeed = 0.6;
         let spawnTimeout;
 
-        function spawnObstacle() {
+            function spawnObstacle() {
             if (isGameOver) return;
             // 半径を0.6から1.0に大きくして、ジャンプの高さ・飛距離とガチッと噛み合わせます
             const geo = new THREE.SphereGeometry(1.0, 32, 32);
-            const mat = new THREE.MeshStandardMaterial({ color: 0xff3333 });
+            
+            // 【修正！】イラストを読み込んで丸に貼り付けます
+            const texture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/umino-kurage/maruwoyokeru/main/F9D3A316-7798-46BB-8BC5-A44B22299324.png');
+            const mat = new THREE.MeshStandardMaterial({ map: texture, transparent: true });
             const mesh = new THREE.Mesh(geo, mat);
+            
             // 出現する奥行きを -60 から -110 の間でランダムにバラけさせます
             const randomZ = -60 - (Math.random() * 50);
             mesh.position.set(0, 0.6, randomZ);
