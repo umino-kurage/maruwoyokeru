@@ -57,7 +57,8 @@
             if (isGameOver) return;
             // 半径を0.6から1.0に大きくして、ジャンプの高さ・飛距離とガチッと噛み合わせます
 // 1. 球体から平らな板（縦横2.0サイズ）に変更し、イラストが歪まないようにします
-            const geo = new THREE.PlaneGeometry(2.0, 2.0);
+            // 縦横のサイズを 2.0 から 3.0 に大きくして、お花をボリュームアップします
+            const geo = new THREE.PlaneGeometry(3.0, 3.0);
             
             // 2. イラストのデータを読み込みます
             const texture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/umino-kurage/maruwoyokeru/main/F9D3A316-7798-46BB-8BC5-A44B22299324.png');
