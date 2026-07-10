@@ -44,12 +44,13 @@
         // 【変更】無機質なデジタル線（grid）は削除しました
 
         // 【追加】背景に空のイラストを配置
-        const skyTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/umino-kurage/maruwoyokeru/main/S__137535491_0.jpg');
-        const skyGeo = new THREE.PlaneGeometry(50, 30);
-        const skyMat = new THREE.MeshBasicMaterial({ map: skyTexture });
-        const sky = new THREE.Mesh(skyGeo, skyMat);
-        sky.position.set(0, 8, -25); // プレイヤーから見えやすい奥に配置
-        scene.add(sky);
+// 【追加】背景に空のイラストを配置
+       const skyTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/umino-kurage/maruwoyokeru/main/S__137535491_0.jpg');
+       const skyGeo = new THREE.PlaneGeometry(120, 70); // ← 空をめちゃくちゃデカくしました
+       const skyMat = new THREE.MeshBasicMaterial({ map: skyTexture });
+       const sky = new THREE.Mesh(skyGeo, skyMat);
+       sky.position.set(0, 20, -50); // ← 空をはるか遠く、高い位置に移動させました
+       scene.add(sky);
 
         // 【追加】地面を流れる葉っぱの準備
         const leafTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/umino-kurage/maruwoyokeru/main/S__137535492_0.png');
