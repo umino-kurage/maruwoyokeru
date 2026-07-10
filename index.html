@@ -58,7 +58,9 @@
             const geo = new THREE.SphereGeometry(0.6, 32, 32);
             const mat = new THREE.MeshStandardMaterial({ color: 0xff3333 });
             const mesh = new THREE.Mesh(geo, mat);
-            mesh.position.set(0, 0.6, -80); 
+            // 出現する奥行きを -60 から -110 の間でランダムにバラけさせます
+            const randomZ = -60 - (Math.random() * 50);
+            mesh.position.set(0, 0.6, randomZ);
             scene.add(mesh);
             obstacles.push(mesh);
 
