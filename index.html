@@ -65,7 +65,7 @@
             obstacles.push(mesh);
 
             // 0.5秒 〜 3.0秒 の間で完全にランダムに次の障害物が来るようになります
-            spawnTimeout = setTimeout(spawnObstacle, 500 + Math.random() * 2500);
+            spawnTimeout = setTimeout(spawnObstacle, 300 + Math.random() * 1200);
         }
         spawnObstacle();
 
