@@ -35,7 +35,7 @@
         dirLight.position.set(5, 10, 7);
         scene.add(dirLight);
 
-        const floorGeo = new THREE.PlaneGeometry(20, 1000);
+        const floorGeo = new THREE.PlaneGeometry(200, 1000);
         const floorMat = new THREE.MeshStandardMaterial({ color: 0x224433 });
         const floor = new THREE.Mesh(floorGeo, floorMat);
         floor.rotation.x = -Math.PI / 2;
@@ -62,7 +62,7 @@
         for (let i = 0; i < maxLeaves; i++) {
             const leafMesh = new THREE.Mesh(leafGeo, leafMat);
             leafMesh.position.set(
-                (Math.random() - 0.5) * 15, // 左右に散らす
+                (Math.random() - 0.5) * 50, // 左右に散らす
                 0.02,                       // 地面すれすれ（床より少し上）
                 -Math.random() * 40         // 奥に散らす
             );
