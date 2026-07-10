@@ -46,7 +46,7 @@
         // 【追加】背景に空のイラストを配置
         // 【追加】背景に空のイラストを配置
         const skyTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/umino-kurage/maruwoyokeru/main/S__137535491_0.jpg');
-        const skyGeo = new THREE.PlaneGeometry(250, 100); // 横幅をさらに大きく
+        const skyGeo = new THREE.PlaneGeometry(250, 350); // 横幅をさらに大きく
         const skyMat = new THREE.MeshBasicMaterial({ map: skyTexture });
         const sky = new THREE.Mesh(skyGeo, skyMat);
         sky.position.set(0, 10, -35); // 地面が刺さらない絶妙な距離感に調整
@@ -62,7 +62,7 @@
         for (let i = 0; i < maxLeaves; i++) {
             const leafMesh = new THREE.Mesh(leafGeo, leafMat);
             leafMesh.position.set(
-                (Math.random() - 0.5) * 50, // 左右に散らす
+                (Math.random() - 0.5) * 250, // 左右に散らす
                 0.02,                       // 地面すれすれ（床より少し上）
                 -Math.random() * 40         // 奥に散らす
             );
